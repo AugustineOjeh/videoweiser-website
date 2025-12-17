@@ -1,22 +1,135 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #000000;
+  --background: #fff;
+  --foreground: #000;
+  --text: #000;
   --primary: #6320ee;
+  --primary-hover: #8075ff;
+  --accent: #6320ee;
+  --link: #201d30;
+  --bg-glow: #8075ff;
+  --grid: #222020;
+  --border: #8075ff40;
+  --grid-block-15: #8075ff26;
+  --grid-block-20: #8075ff33;
+  --grid-block-25: #8075ff40;
+  --grid-block-50: #8075ff80;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1a1631;
+    --foreground: #fff;
+    --text: #fff;
+    --primary: #8075ff;
+    --primary-hover: #6320ee;
+    --accent: #e695ff;
+    --link: #f8f0fb;
+    --bg-glow: #8075ff;
+    --grid: #fff;
+    --border: #8075ff80;
+    --grid-block-15: #8075ff26;
+    --grid-block-20: #8075ff33;
+    --grid-block-25: #8075ff40;
+    --grid-block-50: #8075ff80;
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-text: var(--text);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-accent: var(--accent);
+  --color-link: var(--link);
+  --color-bg-glow: var(--bg-glow);
+  --color-grid: var(--grid);
+  --color-border: var(--border);
+  --color-grid-block-15: var(--grid-block-15);
+  --color-grid-block-20: var(--grid-block-20);
+  --color-grid-block-25: var(--grid-block-25);
+  --color-grid-block-50: var(--grid-block-50);
   --font-gilroy: var(--font-gilroy);
   --font-aeonik: var(--font-aeonik);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1A1631;
-    --foreground: #ffffff;
+@layer components {
+  /* =========================
+     TYPOGRAPHY
+     ========================= */
+
+  .text-h1 {
+    font-family: var(--font-gilroy);
+    font-weight: 700;
+    font-size: clamp(42px, 6vw, 64px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .text-h2 {
+    font-family: var(--font-gilroy);
+    font-weight: 600;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.15;
+  }
+
+  .text-h3 {
+    font-family: var(--font-gilroy);
+    font-weight: 600;
+    font-size: clamp(32px, 4vw, 40px);
+    line-height: 1.15;
+  }
+
+  .text-h4 {
+    font-family: var(--font-gilroy);
+    font-weight: 600;
+    font-size: clamp(22px, 4vw, 24px);
+    line-height: 1.15;
+  }
+
+  .text-h5 {
+    font-family: var(--font-gilroy);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.15;
+  }
+
+  .text-xlarge {
+    font-family: var(--font-aeonik);
+    font-weight: 400;
+    font-size: clamp(20px, 6vw, 24px);
+    line-height: 1.4;
+  }
+
+  .text-large {
+    font-family: var(--font-aeonik);
+    font-weight: 400;
+    font-size: clamp(18px, 6vw, 20px);
+    line-height: 1.4;
+  }
+
+  .text-medium {
+    font-family: var(--font-aeonik);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  .text-small {
+    font-family: var(--font-aeonik);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .text-xsmall {
+    font-family: var(--font-aeonik);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.4;
   }
 }
 
