@@ -212,8 +212,8 @@
   .section {
     position: relative;
     width: 100%;
-    min-height: 100vh;
-    padding: 4rem 2rem;
+    min-height: 50vh;
+    padding: 2rem 3rem;
     z-index: 2;
   }
 
@@ -239,29 +239,20 @@
     isolation: isolate;
   }
 
-  .glow-effect {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    filter: blur(60px);
-    pointer-events: none;
-    z-index: -1;
+  /* =========================
+     GLOW WRAPPER
+     ========================= */
+
+  .glow-wrapper {
+    position: relative;
+    isolation: isolate;
+    /* Creates a new stacking context */
   }
 
-  .glow-low .glow-effect {
-    background: var(--grid-block-15);
-  }
-
-  .glow-medium .glow-effect {
-    background: var(--grid-block-25);
-  }
-
-  .glow-high .glow-effect {
-    background: var(--grid-block-50);
+  /* Optional: Hover effect to make glow more prominent */
+  .glow-wrapper:hover {
+    opacity: calc(var(--glow-opacity, 0.5) * 1.3);
+    transition: opacity 0.5s ease;
   }
 
   .card-content {

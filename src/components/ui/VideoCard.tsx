@@ -1,4 +1,3 @@
-// components/ui/VideoCard.tsx
 import React, { useMemo } from 'react';
 
 interface VideoCardProps {
@@ -11,6 +10,7 @@ interface VideoCardProps {
     showControls?: boolean;
     borderRadius?: number;
     className?: string;
+    overlayOpacity?: number;
 }
 
 export const VideoCard: React.FC<VideoCardProps> = ({
@@ -23,6 +23,7 @@ export const VideoCard: React.FC<VideoCardProps> = ({
     showControls = false,
     borderRadius = 24,
     className = '',
+    overlayOpacity = 50,
 }) => {
     // Parse video URL and generate embed URL
     const embedUrl = useMemo(() => {
@@ -157,6 +158,7 @@ export const VideoCard: React.FC<VideoCardProps> = ({
                                 position: 'absolute',
                                 top: 0,
                                 left: 0,
+                                backgroundColor: `rgba(0, 0, 0, ${overlayOpacity / 100})`,
                                 width: '100%',
                                 height: '100%',
                                 pointerEvents: 'auto',
@@ -185,6 +187,7 @@ export const VideoCard: React.FC<VideoCardProps> = ({
                                 position: 'absolute',
                                 top: 0,
                                 left: 0,
+                                backgroundColor: `rgba(0, 0, 0, ${overlayOpacity / 100})`,
                                 width: '100%',
                                 height: '100%',
                                 pointerEvents: 'auto',

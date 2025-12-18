@@ -1,4 +1,5 @@
 import { PrimaryButton, TextButton, TextComponent, Video } from "../ui";
+import { Glow } from "../visuals";
 import ContentContainer from "../visuals/ContentContainer";
 import Section from "../visuals/Section";
 import { GridBlockLocations, VideoweiserProjects } from "@/core/constants";
@@ -8,12 +9,12 @@ export function HeroSection() {
 
         < Section withGrid gridBlocks={GridBlockLocations} >
             {/* Main Section Container */}
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-8xl mx-auto">
                 {/* This container holds the Texts (on the left —or top for mobile + tablets) 
                 and the video cards on the right (or below for mobile + tablets) */}
-                <div className="flex gap-[100px]">
+                <div className="flex gap-[88px] items-center">
                     <ContentContainer className="max-w-[640px]">
-                        <TextComponent.Title className="my-12"
+                        <TextComponent.Title className=""
                             text="Videos to enrich healthcare brands and drive growth" />
                         <TextComponent.Body.Large className="my-12"
                             text="We create engaging videos that simplify complex health concepts,
@@ -26,21 +27,59 @@ export function HeroSection() {
 
                         </div>
                     </ContentContainer>
-                    <div className="w-[900px] flex-col gap-[12px]">
-                        <Video
-                            url={VideoweiserProjects.MadFit.url}
-                            autoplay
-                            showControls={false}
-                            width={240}
-                            aspectRatio={VideoweiserProjects.MadFit.aspectRatio
-                            } />
-                        <Video
-                            url={VideoweiserProjects.MadFit.url}
-                            autoplay
-                            showControls={false}
-                            width={240}
-                            aspectRatio={VideoweiserProjects.MadFit.aspectRatio
-                            } />
+                    <div className="w-[900px] flex space-x-[8px]" >
+                        <div className="space-y-[8px] mt-16">
+                            <Video
+                                url={VideoweiserProjects.MadFit.url}
+                                autoplay
+                                showControls={false}
+                                height={360}
+                                aspectRatio={VideoweiserProjects.MadFit.aspectRatio
+                                } />
+                            <Video
+                                url={VideoweiserProjects.MadFit.url}
+                                autoplay
+                                showControls={false}
+                                height={360}
+                                aspectRatio={VideoweiserProjects.MadFit.aspectRatio
+                                } />
+                        </div>
+                        <div className="space-y-[8px]">
+                            <Video
+                                url={VideoweiserProjects.MadFit.url}
+                                autoplay
+                                showControls={false}
+                                height={360}
+                                aspectRatio={VideoweiserProjects.MadFit.aspectRatio
+                                } />
+                            {/* Apply the Glow Effect to this card */}
+                            <Glow glowIntensity="low" glowSize={150} >
+                                <Video
+                                    url={VideoweiserProjects.MadFit.url}
+                                    autoplay
+                                    showControls={false}
+                                    height={360}
+                                    aspectRatio={VideoweiserProjects.MadFit.aspectRatio
+                                    } />
+                            </Glow>
+                        </div>
+                        <div className="space-y-[8px] mt-32">
+                            <Video
+                                url={VideoweiserProjects.MadFit.url}
+                                autoplay
+                                showControls={false}
+                                height={360}
+                                aspectRatio={VideoweiserProjects.MadFit.aspectRatio
+                                } />
+                            <Video
+                                url={VideoweiserProjects.MadFit.url}
+                                autoplay
+                                showControls={false}
+                                height={360}
+                                aspectRatio={VideoweiserProjects.MadFit.aspectRatio
+                                } />
+                        </div>
+
                     </div>
                 </div>
             </div>
