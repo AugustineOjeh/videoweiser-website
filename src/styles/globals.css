@@ -37,6 +37,21 @@
   }
 }
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  .content-container.with-fade {
+    padding: 1.5rem;
+  }
+
+  .card-content {
+    padding: 1rem;
+  }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -130,6 +145,212 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 1.4;
+  }
+
+  /* ===============================
+     BACKGROUN GRID SYSTEM AND GLOW
+     =============================== */
+
+
+  .grid-background {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  .grid-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+      linear-gradient(to right, var(--grid-block-15) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-block-15) 1px, transparent 1px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Grid Blocks - Randomly placed solid fills */
+  .grid-block {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .grid-block-15 {
+    background: var(--grid-block-15);
+  }
+
+  .grid-block-20 {
+    background: var(--grid-block-20);
+  }
+
+  .grid-block-25 {
+    background: var(--grid-block-25);
+  }
+
+  .grid-block-50 {
+    background: var(--grid-block-50);
+  }
+
+  /* Vertical Fade Layer */
+  .grid-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to bottom,
+        transparent,
+        var(--background));
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Section Container */
+  .section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    z-index: 2;
+  }
+
+  /* Content Container with Background Fade */
+  .content-container {
+    position: relative;
+    z-index: 3;
+  }
+
+  .content-container.with-fade {
+    background: radial-gradient(ellipse at center,
+        var(--background) 0%,
+        transparent 70%);
+    padding: 2rem;
+  }
+
+  /* Glow Card Component */
+  .glow-card {
+    position: relative;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .glow-effect {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .glow-low .glow-effect {
+    background: var(--grid-block-15);
+  }
+
+  .glow-medium .glow-effect {
+    background: var(--grid-block-25);
+  }
+
+  .glow-high .glow-effect {
+    background: var(--grid-block-50);
+  }
+
+  .card-content {
+    position: relative;
+    z-index: 1;
+    padding: 1.5rem;
+  }
+
+  /* =========================
+     BUTTONS
+     ========================= */
+
+
+  .primary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    font-family: var(--font-gilroy);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #fff;
+    background: var(--primary);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+  }
+
+  .primary-button:hover {
+    background: var(--primary-hover);
+    /* transform: translateY(-1px); */
+  }
+
+  .primary-button:active {
+    transform: translateY(0);
+  }
+
+  .primary-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .text-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 16px;
+    font-family: var(--font-gilroy);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--link);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+  }
+
+  .text-button:hover {
+    text-decoration: underline;
+  }
+
+  .text-button:active {
+    transform: translateY(0);
+  }
+
+  .text-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  /* =========================
+     VIDEO CARD
+     ========================= */
+
+  .video-card {
+    background: var(--background);
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+  }
+
+  .video-card:hover {
+    border-color: var(--primary);
+    /* box-shadow: 0 8px 24px var(--grid-block-25); */
   }
 }
 
