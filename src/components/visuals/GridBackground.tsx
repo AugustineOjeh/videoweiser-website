@@ -24,10 +24,10 @@ export const GridBackground: React.FC<GridBackgroundProps> = ({
                     key={index}
                     className={`grid-block grid-block-${block.opacity}`}
                     style={{
-                        left: `${block.col * gridSize}px`,
-                        top: `${block.row * gridSize}px`,
-                        width: `${block.width * gridSize}px`,
-                        height: `${block.height * gridSize}px`,
+                        left: `${(block.col * gridSize) + 1}px`,
+                        top: `${(block.row * gridSize) + 1}px`,
+                        width: `${(block.width * gridSize) - 1}px`,
+                        height: `${(block.height * gridSize) - 1}px`,
                     }}
                 />
             ))}
