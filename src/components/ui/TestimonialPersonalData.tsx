@@ -25,7 +25,7 @@ export const TestimonialPersonalDataCard: React.FC<_Props> = ({
                 width={32} />
 
             <div className='flex flex-col'>
-                <Text.Body.Small className='font-bold' text={data.fullName} />
+                <Text.Label.Medium className='font-bold leading-tight' text={data.fullName} />
                 <Text.Label.Medium text={`${data.position} at ${data.company?.name ?? 'Client Company'}`} />
             </div>
         </div>

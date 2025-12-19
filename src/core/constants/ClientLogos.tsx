@@ -123,8 +123,8 @@ export const ClientLogos = {
         name: "360 Cookware LLC",
         website: "http://360cookware.com",
         alt: "360 Cookware Logo",
-        light: undefined,
-        dark: "/ClientLogos/360-cookware-logo-light.svg",
+        light: "/ClientLogos/360-cookware-logo-light.svg",
+        dark: "/ClientLogos/360-cookware-logo-dark.svg",
     },
 
     Valera: {

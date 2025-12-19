@@ -41,10 +41,10 @@ export function ResultsSection() {
                             subtitle="We are the trusted video partner to clients from various sub-sectors of the healthcare industry, from fitness trainers to cancer research companies."
                         />
                         <ResultBarComponent
-                            className="h-[570px] bg-[#6320EE]"
-                            figure="2.163B+"
+                            className="h-[570px] bg-[#6320EE] text-[#fff]"
+                            figure="2.16B+"
                             title="Impressions reached"
-                            subtitle="Since our inception in 2010, our videos have reached the feeds of our clients’ target audiences 2.16B times. That’s 25% of the world’s population."
+                            subtitle="Since our inception in 2010, our videos have reached the feeds of our clients’ target audiences 2.163B times. That’s 25% of the world’s population."
                         />
                     </div>
                 </BackgroundFade>

@@ -32,18 +32,19 @@ export function CaseStudySection() {
                         <CaseStudyHighlight
                             className="rounded-tl-[32px] rounded-bl-[32px] rounded-tr-[12px] rounded-br-[12px]"
                             title="Safety and compliance-first video production"
-                            subtitle="Astronomical leaps in internal processes and safety compliance through expert-crafted explainer videos."
+                            subtitle="Astronomical leaps in internal processes and safety compliance achieved through expert-crafted explainer videos."
                             testimonial={ClientTestimonials.Three60Cookware} />
+
                         <CaseStudyHighlight
                             className="rounded-[12px]"
-                            title="Precision-crafted explainer videos"
-                            subtitle="Engaging customer education videos that simplifies complex topics."
+                            title="Precision-crafted, audience-centric explainer videos"
+                            subtitle="Complex topics simplified through videos reported greater customer education, higher engagement and more conversion."
                             testimonial={ClientTestimonials.Petersons} />
 
                         <CaseStudyHighlight
                             className="rounded-tl-[12px] rounded-bl-[12px] rounded-tr-[32px] rounded-br-[32px]"
                             title="Confident, consistent and fast-moving branding visuals"
-                            subtitle="Brand messaging that resonates with zero ambiguity, communicated through compelling video narratives."
+                            subtitle="Brand messaging with zero ambiguity, resonates strongly with audiences, and communicated through compelling video narratives."
                             testimonial={ClientTestimonials.MacSports} />
                     </div>
                 </Glow>
@@ -66,7 +67,7 @@ export const CaseStudyHighlight: React.FC<CaseStudyHighlightProps> = ({
     testimonial,
     className,
 }) => {
-    const baseClasses = "flex flex-col max-w-[450px] w-full min-h-[540px] justify-between bg-[var(--background)] px-[24px] pt-[32px] pb-[24px] border-border border-[1px]";
+    const baseClasses = "flex flex-col max-w-[450px] w-full min-h-[520px] justify-between bg-[var(--background)] px-[24px] pt-[32px] pb-[24px] border-border border-[1px]";
     return (
         <div className={`${baseClasses} ${className}`}>
             <div className="space-y-[16px]">
@@ -77,13 +78,14 @@ export const CaseStudyHighlight: React.FC<CaseStudyHighlightProps> = ({
             <div className="px-[16px] py-[24px] border-border border-[1px] rounded-[16px] space-y-[32px]">
                 <CustomImage
                     alt={testimonial.company?.alt}
+                    className={`${testimonial.company?.name === "Peterson's" ? 'dark:grayscale dark:invert' : ''}`}
                     lightModeImage={testimonial.company?.light}
                     darkModeImage={testimonial.company?.dark}
                     height={48}
-                    isGrayScale={testimonial.company?.name === "Peterson's"}
-                    width={testimonial.company?.name === "Peterson's" ? 140 : 90}
+                    isGrayScale={false}
+                    width={testimonial.company?.name === "Peterson's" ? 150 : 90}
                 />
-                <Text.Headline.XSmall className="font-[18px]" text={`"${testimonial.testimonial}"`} />
+                <Text.Headline.XSmall className="text-[18px]" text={`"${testimonial.testimonial}"`} />
                 <TestimonialPersonalDataCard data={testimonial} />
             </div>
         </div>

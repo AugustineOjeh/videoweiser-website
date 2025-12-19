@@ -54,7 +54,7 @@ export const TextButton: React.FC<ButtonProps> = ({
                     <span>{label}</span>
 
                     <IoArrowForwardOutline
-                        fontSize={18}
+                        fontSize={14}
                         aria-hidden
                     />
                 </Link>
