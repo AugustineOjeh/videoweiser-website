@@ -6,6 +6,7 @@ interface ImageProps {
     className?: string;
     darkModeImage?: string;
     height?: number;
+    isGrayScale?: boolean;
     lightModeImage?: string;
     opacity?: number;
     width?: number;
@@ -15,6 +16,7 @@ export const CustomImage: React.FC<ImageProps> = ({
     className = '',
     darkModeImage,
     height,
+    isGrayScale = true,
     lightModeImage,
     opacity,
     width,
@@ -34,7 +36,7 @@ export const CustomImage: React.FC<ImageProps> = ({
                     alt={alt}
                     width={width ?? 110}
                     height={height ?? 24}
-                    className={`grayscale ${!lightModeImage ? 'invert' : ''}`}
+                    className={`${isGrayScale ? 'grayscale' : ''} ${!lightModeImage && isGrayScale ? 'invert' : ''}`}
                 />
             </div>
 
@@ -48,7 +50,7 @@ export const CustomImage: React.FC<ImageProps> = ({
                     alt={alt}
                     width={width ?? 110}
                     height={height ?? 24}
-                    className={`grayscale ${!darkModeImage ? 'invert' : ''}`}
+                    className={`${isGrayScale ? 'grayscale' : ''}  ${!darkModeImage && isGrayScale ? 'invert' : ''}`}
                 />
             </div>
         </div>

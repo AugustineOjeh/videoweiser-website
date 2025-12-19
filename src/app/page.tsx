@@ -2,7 +2,7 @@
 import { CaseStudySection } from "@/components/sections/CaseStudySection";
 import { ClientLogoSection } from "@/components/sections/ClientLogoSection";
 import { HeroSection } from "@/components/sections/HeroSection";
-import Image from "next/image";
+import { ResultsSection } from "@/components/sections/ResultsSection";
 
 export default function Home() {
   return (
@@ -10,6 +10,7 @@ export default function Home() {
       <HeroSection />
       <ClientLogoSection />
       <CaseStudySection />
+      <ResultsSection />
     </main>
   );
 }

@@ -27,25 +27,26 @@ export function CaseStudySection() {
                             text="We help fast-growing companies get ahead in the ever-complex and compliance-dense healthcare industry." />
                     </BackgroundFade>
                 </div>
-                <div className="w-full flex items-stretch space-x-[16px] pt-6" >
-                    <CaseStudyHighlight
-                        className="rounded-tl-[32px] rounded-bl-[32px] rounded-tr-[12px] rounded-br-[12px]"
-                        title="Safety and compliance-first video production"
-                        subtitle="Astronomical leaps in internal processes and safety compliance through expert-crafted explainer videos."
-                        testimonial={ClientTestimonials.Three60Cookware} />
+                <Glow className="w-full" glowIntensity="low" glowSize={70}>
+                    <div className="w-full flex items-stretch space-x-[8px] pt-6" >
+                        <CaseStudyHighlight
+                            className="rounded-tl-[32px] rounded-bl-[32px] rounded-tr-[12px] rounded-br-[12px]"
+                            title="Safety and compliance-first video production"
+                            subtitle="Astronomical leaps in internal processes and safety compliance through expert-crafted explainer videos."
+                            testimonial={ClientTestimonials.Three60Cookware} />
+                        <CaseStudyHighlight
+                            className="rounded-[12px]"
+                            title="Precision-crafted explainer videos"
+                            subtitle="Engaging customer education videos that simplifies complex topics."
+                            testimonial={ClientTestimonials.Petersons} />
 
-                    <CaseStudyHighlight
-                        className="rounded-[12px]"
-                        title="Precision-crafted explainer videos"
-                        subtitle="Engaging customer education videos that simplifies complex topics."
-                        testimonial={ClientTestimonials.Petersons} />
-
-                    <CaseStudyHighlight
-                        className="rounded-tl-[12px] rounded-bl-[12px] rounded-tr-[32px] rounded-br-[32px]"
-                        title="Confident, consistent and fast-moving branding visuals"
-                        subtitle="Brand messaging that resonates with zero ambiguity, communicated through compelling video narratives."
-                        testimonial={ClientTestimonials.MacSports} />
-                </div>
+                        <CaseStudyHighlight
+                            className="rounded-tl-[12px] rounded-bl-[12px] rounded-tr-[32px] rounded-br-[32px]"
+                            title="Confident, consistent and fast-moving branding visuals"
+                            subtitle="Brand messaging that resonates with zero ambiguity, communicated through compelling video narratives."
+                            testimonial={ClientTestimonials.MacSports} />
+                    </div>
+                </Glow>
             </div>
         </Section >
 
@@ -65,7 +66,7 @@ export const CaseStudyHighlight: React.FC<CaseStudyHighlightProps> = ({
     testimonial,
     className,
 }) => {
-    const baseClasses = "flex flex-col max-w-[450px] min-h-[540px] justify-between bg-[var(--background)] px-[24px] pt-[32px] pb-[24px] border-border border-[1px]";
+    const baseClasses = "flex flex-col max-w-[450px] w-full min-h-[540px] justify-between bg-[var(--background)] px-[24px] pt-[32px] pb-[24px] border-border border-[1px]";
     return (
         <div className={`${baseClasses} ${className}`}>
             <div className="space-y-[16px]">
@@ -75,10 +76,11 @@ export const CaseStudyHighlight: React.FC<CaseStudyHighlightProps> = ({
             </div>
             <div className="px-[16px] py-[24px] border-border border-[1px] rounded-[16px] space-y-[32px]">
                 <CustomImage
+                    alt={testimonial.company?.alt}
                     lightModeImage={testimonial.company?.light}
                     darkModeImage={testimonial.company?.dark}
-                    alt={testimonial.company?.alt}
                     height={48}
+                    isGrayScale={testimonial.company?.name === "Peterson's"}
                     width={testimonial.company?.name === "Peterson's" ? 140 : 90}
                 />
                 <Text.Headline.XSmall className="font-[18px]" text={`"${testimonial.testimonial}"`} />
