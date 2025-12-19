@@ -27,7 +27,7 @@ export function ResultsSection() {
                 </div>
                 <BackgroundFade >
 
-                    <div className="w-full flex items-end space-x-[8px]" >
+                    <div className="w-full flex items-end space-x-[16px]" >
                         <ResultBarComponent
                             className="h-[420px] bg-[var(--background)]"
                             figure="50 000+"

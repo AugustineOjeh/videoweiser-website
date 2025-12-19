@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { gilroy, aeonik } from "@/lib/fonts";
 import "../styles/globals.css";
+import { Footer } from "@/components/layout/Footer";
+import { Navbar } from "@/components/layout/NavBar";
 
 export const metadata: Metadata = {
   title: { default: "Videoweiser | Video Production Partners for Healthcare Brands", template: "%s | Videoweiser" },
@@ -23,7 +25,9 @@ export default function RootLayout({
           defaultTheme="system"
           enableSystem
         ></ThemeProvider>
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
