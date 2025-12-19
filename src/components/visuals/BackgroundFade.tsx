@@ -1,8 +1,8 @@
 import React from 'react';
-import type { ContentContainerProps } from '@/types/ComponentTypes';
+import type { BackgroundFadeProps } from '@/types/ComponentTypes';
 
 
-export const ContentContainer: React.FC<ContentContainerProps> = ({
+export const BackgroundFade: React.FC<BackgroundFadeProps> = ({
     children,
     className = '',
     withBackgroundFade = true,
@@ -14,4 +14,4 @@ export const ContentContainer: React.FC<ContentContainerProps> = ({
     );
 };
 
-export default ContentContainer;
+export default BackgroundFade;

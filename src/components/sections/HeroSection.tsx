@@ -1,5 +1,5 @@
 import { PrimaryButton, TextButton, TextComponent, Video } from "../ui";
-import { Glow, ContentContainer, Section } from "../visuals";
+import { Glow, BackgroundFade, Section } from "../visuals";
 import { GridBlockLocations, VideoweiserProjects } from "@/core/constants";
 
 export function HeroSection() {
@@ -12,16 +12,16 @@ export function HeroSection() {
                 and the video cards on the right (or below for mobile + tablets) */}
                 <div className="flex gap-[88px] items-center">
                     <div className="max-w-[640px]">
-                        <ContentContainer >
+                        <BackgroundFade >
                             <TextComponent.Title className=""
                                 text="Videos to enrich healthcare brands and drive growth" />
-                        </ContentContainer>
-                        <ContentContainer >
+                        </BackgroundFade>
+                        <BackgroundFade >
                             <TextComponent.Body.Large className="my-12"
                                 text="We create engaging videos that simplify complex health concepts,
                         enhance credibility, and inspire actions that leads to measurable
                         growth for brands." />
-                        </ContentContainer>
+                        </BackgroundFade>
 
                         <div className="flex gap-4">
                             <PrimaryButton label="Contact us" href="#" />

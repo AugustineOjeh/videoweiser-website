@@ -1,6 +1,6 @@
 import { CustomImage, PrimaryButton, TextButton, TextComponent } from "../ui";
-import { Glow, ContentContainer, Section } from "../visuals";
-import { ClientLogos } from "@/core/constants";
+import { Glow, Section } from "../visuals";
+import { ClientLogos } from "@/core/constants/ClientLogos";
 
 export function ClientLogoSection() {
     return (

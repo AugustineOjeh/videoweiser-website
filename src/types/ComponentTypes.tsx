@@ -1,6 +1,8 @@
 
 // Centralized type definitions for all components
 
+import { ClientTestimonials } from "@/core/constants";
+
 export interface GridBlock {
     row: number;
     col: number;
@@ -17,7 +19,7 @@ export interface GridBackgroundProps {
     gridBlocks?: GridBlock[];
 }
 
-export interface ContentContainerProps {
+export interface BackgroundFadeProps {
     children: React.ReactNode;
     className?: string;
     withBackgroundFade?: boolean;
@@ -60,3 +62,30 @@ export interface ButtonProps {
     type?: 'button' | 'submit' | 'reset';
     href?: string;
 }
+
+export interface ClientLogo {
+    name: string;
+    website?: string;
+    light?: string;
+    dark?: string;
+    alt?: string;
+}
+
+export interface TestimonialData {
+    fullName: string;
+    image: {
+        url: string;
+        alt: string;
+    };
+    position: string;
+    company?: ClientLogo;
+    client?: ClientLogo;
+    caseStudy: {
+        url?: string;
+    };
+    testimonial: string;
+}
+
+// Type helper to extract values from const object
+export type ClientTestimonialKey = keyof typeof ClientTestimonials;
+export type ClientTestimonialValue = typeof ClientTestimonials[ClientTestimonialKey];
