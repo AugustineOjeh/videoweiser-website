@@ -43,7 +43,7 @@ export const GlowWrapper: React.FC<GlowWrapperProps> = ({
                         : 'var(--bg-glow)',
                     opacity: opacity,
                     filter: 'blur(80px)',
-                    borderRadius: '50%',
+                    borderRadius: '100%',
                     pointerEvents: 'none',
                     zIndex: -1,
                 }}

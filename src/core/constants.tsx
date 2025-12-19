@@ -41,3 +41,71 @@ export const VideoweiserProjects = {
         aspectRatio: 9 / 16
     },
 } as const;
+
+export const ClientLogos = {
+    Eleos: {
+        alt: "Eleos Health Logo",
+        light: "/ClientLogos/eleos-logo-light.png",
+        dark: "/ClientLogos/eleos-logo-dark.png",
+    },
+    Headway: {
+        alt: "Headway Mental Health Logo",
+        light: "/ClientLogos/headway-logo-light.webp",
+        dark: undefined,
+    },
+    Valera: {
+        alt: "Valera Health Logo",
+        light: "/ClientLogos/valera-logo-light.svg",
+        dark: "/ClientLogos/valera-logo-dark.svg",
+    },
+    SimplePractice: {
+        alt: "Simple Practice Logo",
+        light: "/ClientLogos/simple-practice-logo-light.png",
+        dark: undefined,
+    },
+    BeckmanCoulter: {
+        alt: "Beckman Coulter Logo",
+        light: "/ClientLogos/beckman-coulter-logo-light.png",
+        dark: "/ClientLogos/beckman-coulter-logo-dark.png",
+    },
+    ABSKids: {
+        alt: "ABS Kids Logo",
+        light: "/ClientLogos/abs-kids-logo-light.svg",
+        dark: undefined,
+    },
+    PsychInsight: {
+        alt: "Psych Insight Logo",
+        light: "/ClientLogos/psych-insight-logo-light.webp",
+        dark: undefined,
+    },
+    BioRad: {
+        alt: "Bio Radiation Logo",
+        light: undefined,
+        dark: "/ClientLogos/bio-rad-logo-light.png",
+    },
+    CentralReach: {
+        alt: "Central Reach Logo",
+        light: "/ClientLogos/central-reach-logo-light.webp",
+        dark: undefined,
+    },
+    ButterflyEffect: {
+        alt: "Butterfly Effect Logo",
+        light: "/ClientLogos/butterfly-effect-logo-light.webp",
+        dark: undefined,
+    },
+    Talkspace: {
+        alt: "Talkspace Logo",
+        light: "/ClientLogos/talkspace-logo-light.webp",
+        dark: undefined,
+    },
+    Bruker: {
+        alt: "Bruker Logo",
+        light: "/ClientLogos/bruker-logo-light.png",
+        dark: undefined,
+    },
+    TherapyNotes: {
+        alt: "Therapy Notes Logo",
+        light: "/ClientLogos/therapy-note-logo-light.webp",
+        dark: undefined,
+    },
+} as const

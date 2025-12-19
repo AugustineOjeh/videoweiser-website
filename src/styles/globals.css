@@ -8,9 +8,9 @@
   --primary-hover: #8075ff;
   --accent: #6320ee;
   --link: #201d30;
-  --bg-glow: #8075ff;
+  --bg-glow: #6320ee;
   --grid: #222020;
-  --border: #8075ff40;
+  --border: #8075ff80;
   --grid-block-15: #8075ff26;
   --grid-block-20: #8075ff33;
   --grid-block-25: #8075ff40;
@@ -40,11 +40,7 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .section {
-    padding: 2rem 1rem;
-  }
-
-  .content-container.with-fade {
-    padding: 1.5rem;
+    padding: 2rem 24px;
   }
 
   .card-content {
@@ -194,8 +190,33 @@
     background: var(--grid-block-50);
   }
 
-  /* Vertical Fade Layer */
+  /* Vertical Fade Layers */
   .grid-fade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Top fade */
+  .grid-fade::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to bottom,
+        var(--background),
+        transparent);
+  }
+
+  /* Bottom fade */
+  .grid-fade::after {
+    content: '';
     position: absolute;
     bottom: 0;
     left: 0;
@@ -204,8 +225,6 @@
     background: linear-gradient(to bottom,
         transparent,
         var(--background));
-    pointer-events: none;
-    z-index: 1;
   }
 
   /* Section Container */
@@ -213,7 +232,7 @@
     position: relative;
     width: 100%;
     min-height: 50vh;
-    padding: 2rem 3rem;
+    padding: 2rem 80px;
     z-index: 2;
   }
 
@@ -226,8 +245,8 @@
   .content-container.with-fade {
     background: radial-gradient(ellipse at center,
         var(--background) 0%,
-        transparent 70%);
-    padding: 2rem;
+        transparent 100%);
+    /* padding: 2rem; */
   }
 
   /* Glow Card Component */
@@ -247,12 +266,6 @@
     position: relative;
     isolation: isolate;
     /* Creates a new stacking context */
-  }
-
-  /* Optional: Hover effect to make glow more prominent */
-  .glow-wrapper:hover {
-    opacity: calc(var(--glow-opacity, 0.5) * 1.3);
-    transition: opacity 0.5s ease;
   }
 
   .card-content {

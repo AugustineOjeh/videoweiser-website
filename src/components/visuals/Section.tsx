@@ -20,7 +20,7 @@ export const Section: React.FC<SectionProps> = ({
 
     if (withGrid) {
         return (
-            <GridBackground gridSize={gridSize} gridBlocks={gridBlocks}>
+            <GridBackground gridSize={gridSize} gridBlocks={gridBlocks} >
                 {content}
             </GridBackground>
         );

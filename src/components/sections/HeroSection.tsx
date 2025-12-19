@@ -1,7 +1,5 @@
 import { PrimaryButton, TextButton, TextComponent, Video } from "../ui";
-import { Glow } from "../visuals";
-import ContentContainer from "../visuals/ContentContainer";
-import Section from "../visuals/Section";
+import { Glow, ContentContainer, Section } from "../visuals";
 import { GridBlockLocations, VideoweiserProjects } from "@/core/constants";
 
 export function HeroSection() {
@@ -13,20 +11,23 @@ export function HeroSection() {
                 {/* This container holds the Texts (on the left —or top for mobile + tablets) 
                 and the video cards on the right (or below for mobile + tablets) */}
                 <div className="flex gap-[88px] items-center">
-                    <ContentContainer className="max-w-[640px]">
-                        <TextComponent.Title className=""
-                            text="Videos to enrich healthcare brands and drive growth" />
-                        <TextComponent.Body.Large className="my-12"
-                            text="We create engaging videos that simplify complex health concepts,
+                    <div className="max-w-[640px]">
+                        <ContentContainer >
+                            <TextComponent.Title className=""
+                                text="Videos to enrich healthcare brands and drive growth" />
+                        </ContentContainer>
+                        <ContentContainer >
+                            <TextComponent.Body.Large className="my-12"
+                                text="We create engaging videos that simplify complex health concepts,
                         enhance credibility, and inspire actions that leads to measurable
                         growth for brands." />
+                        </ContentContainer>
 
                         <div className="flex gap-4">
                             <PrimaryButton label="Contact us" href="#" />
                             <TextButton label="See our works" href="#" />
-
                         </div>
-                    </ContentContainer>
+                    </div>
                     <div className="w-[900px] flex space-x-[8px]" >
                         <div className="space-y-[8px] mt-16">
                             <Video
