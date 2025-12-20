@@ -25,7 +25,7 @@ export function FAQSection() {
 
               <div className="flex gap-4 mt-4">
                 <PrimaryButton label="Contact us" href="#" />
-                <TextButton label="See our works" href="#" />
+                <TextButton label="See our works" href="/works" />
               </div>
             </div>
             <div

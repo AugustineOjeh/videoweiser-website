@@ -357,6 +357,36 @@
     border-color: var(--primary);
     /* box-shadow: 0 8px 24px var(--grid-block-25); */
   }
+
+  /* =========================
+     PORTFOLIO HERO GRID
+     ========================= */
+
+  .portfolio-hero-grid {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  /* Hide scrollbar */
+  .portfolio-hero-grid>div {
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+  }
+
+  .portfolio-hero-grid>div::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+  }
+
+  /* Optional: Add subtle pause on hover */
+  .portfolio-hero-grid:hover {
+    /* Animation pause is handled in JS, but you can add visual feedback */
+    opacity: 0.95;
+    transition: opacity 0.3s ease;
+  }
 }
 
 body {

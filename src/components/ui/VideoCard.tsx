@@ -8,6 +8,7 @@ interface VideoCardProps {
   autoplay?: boolean;
   loop?: boolean;
   showControls?: boolean;
+  isClickable?: boolean;
   borderRadius?: number;
   className?: string;
   overlayOpacity?: number;
@@ -20,6 +21,7 @@ export const VideoCard: React.FC<VideoCardProps> = ({
   height,
   autoplay = false,
   loop = true,
+  isClickable = false,
   showControls = false,
   borderRadius = 24,
   className = '',
@@ -152,7 +154,7 @@ export const VideoCard: React.FC<VideoCardProps> = ({
             allowFullScreen
             title="Video"
           />
-          {!showControls && (
+          {!isClickable && (
             <div
               className='hover:opacity-[.9] transition-0.5s'
               style={{
@@ -182,7 +184,7 @@ export const VideoCard: React.FC<VideoCardProps> = ({
             allowFullScreen
             title="Video"
           />
-          {!showControls && (
+          {!isClickable && (
             <div
               className='hover:opacity-[.9] transition-0.5s'
               style={{
