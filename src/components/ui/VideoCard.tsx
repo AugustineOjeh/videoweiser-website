@@ -3,7 +3,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 
 interface VideoCardProps {
   url: string;
-  aspectRatio?: number; 
+  aspectRatio?: number;
   width?: string | number;
   height?: string | number;
   autoplay?: boolean;
@@ -131,7 +131,8 @@ export const VideoCard: React.FC<VideoCardProps> = ({
   const dimensions = useMemo(() => {
     const parseValue = (value: string | number | undefined): string | undefined => {
       if (value === undefined) return undefined;
-      return typeof value === 'number' ? `${value}px` : value;
+      if (typeof value === 'number') return `${value}px`;
+      return value;
     };
 
     const parsedWidth = parseValue(width);

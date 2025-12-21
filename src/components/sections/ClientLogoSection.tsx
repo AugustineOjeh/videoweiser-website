@@ -6,7 +6,7 @@ export function ClientLogoSection() {
   const logoRows = [
     [
       { ...ClientLogos.SimplePractice, width: 140, opacity: 50 },
-      { ...ClientLogos.BeckmanCoulter, width: 105, opacity: 70 },
+      { ...ClientLogos.BeckmanCoulter, width: 110, opacity: 70 },
       { ...ClientLogos.TherapyNotes, width: 120, opacity: 100 },
     ],
     [
@@ -16,12 +16,12 @@ export function ClientLogoSection() {
     ],
     [
       { ...ClientLogos.Valera, width: 150, opacity: 80 },
-      { ...ClientLogos.BioRad, width: 100, opacity: 70 },
+      { ...ClientLogos.BioRad, width: 95, opacity: 70 },
       { ...ClientLogos.CentralReach, width: 115, opacity: 80 },
     ],
     [
       { ...ClientLogos.ButterflyEffect, width: 150, opacity: 90 },
-      { ...ClientLogos.Bruker, width: 100, opacity: 70 },
+      { ...ClientLogos.Bruker, width: 95, opacity: 70 },
       { ...ClientLogos.Talkspace, width: 115, opacity: 80 },
     ],
   ];
@@ -66,19 +66,21 @@ export function ClientLogoSection() {
               </div>
             </div>
             {/* Logo Grid */}
-            <div className="w-full flex-1 items-center justify-center">
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-10 place-items-center max-w-2xl mx-auto">
+            <div className="w-full flex-1">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-12 items-center justify-center max-w-2xl mx-auto">
                 {allLogos.map((logo, index) => (
-                  <CustomImage
-                    key={`${logo.alt}-${index}`}
-                    lightModeImage={logo.light}
-                    darkModeImage={logo.dark}
-                    alt={logo.alt}
-                    width={logo.width}
-                    height={24}
-                    opacity={logo.opacity}
-                    className="w-full max-w-[170px]"
-                  />
+                  <div className="mx-auto">
+                    <CustomImage
+                      key={`${logo.alt}-${index}`}
+                      lightModeImage={logo.light}
+                      darkModeImage={logo.dark}
+                      alt={logo.alt}
+                      width={logo.width}
+                      height={24}
+                      opacity={logo.opacity}
+                      className="w-full max-w-[170px]"
+                    />
+                  </div>
                 ))}
               </div>
             </div>

@@ -59,7 +59,6 @@ export function Navbar() {
               label="Contact us"
               href="#" />
             <button
-              className="p-[8px]"
               onClick={() => setIsMenuOpen(true)}
               aria-label="Open menu"
             >

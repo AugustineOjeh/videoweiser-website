@@ -11,13 +11,13 @@ export function AboutUsSection() {
       gridBlocks={GridBlockLocations} >
       {/* Main Section Container */}
       <div
-        className="max-w-8xl items-center space-y-[16px] py-[88px] mx-auto"
+        className="max-w-8xl mx-auto py-16 lg:py-24 px-4 lg:px-4"
       >
         <div
-          className="w-full flex justify-between items-end space-x-[90px]"
+          className="flex flex-col lg:flex-row justify-between items-center lg:items-end gap-12 lg:gap-20 mb-4"
         >
-          <div className="max-w-[510px] space-y-[32px]">
-            <div className="space-y-[16px]">
+          <div className="w-full lg:max-w-[510px] text-center lg:text-left space-y-8">
+            <div className="space-y-4">
               <BackgroundFade >
                 <TextComponent.Label.Small
                   className="text-accent font-bold"
@@ -25,8 +25,10 @@ export function AboutUsSection() {
                 />
               </BackgroundFade>
               <BackgroundFade >
+
                 <TextComponent.Headline.Medium
-                  text="One decade. One team. Zero creative boundaries" />
+                  text={"One decade. One team. Zero creative boundaries"} />
+
               </BackgroundFade>
             </div>
             <BackgroundFade >
@@ -40,22 +42,34 @@ export function AboutUsSection() {
               />
             </BackgroundFade>
             <PrimaryButton
-              className="py-3"
+              className="w-full md:w-auto py-3"
               label="Join our team"
             />
           </div>
-          <Glow glowIntensity="low" glowSize={100}>
-            <div>
-              <Video
-                url={VideoweiserProjects.Siemens.url}
-                isClickable={true}
-                // autoplay={true}
-                width={720}
-              />
-            </div>
+          <Glow
+            className="hidden md:flex"
+            glowIntensity="low"
+            glowSize={100}>
+            <Video
+              url={VideoweiserProjects.Siemens.url}
+              isClickable={true}
+              width={720}
+              aspectRatio={16 / 9}
+            />
+          </Glow>
+          <Glow
+            className="flex md:hidden"
+            glowIntensity="low"
+            glowSize={100}>
+            <Video
+              url={VideoweiserProjects.Siemens.url}
+              isClickable={true}
+              width={360}
+              aspectRatio={16 / 9}
+            />
           </Glow>
         </div>
-        <div className="flex space-x-[16px]">
+        <div className="hidden lg:flex space-x-[16px]">
           <Video
             url={VideoweiserProjects.Coviant.url}
             height={240}
