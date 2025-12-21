@@ -43,29 +43,34 @@ export function AboutUsSection() {
             />
           </div>
           <Glow glowIntensity="low" glowSize={100}>
-            <Video
-              url={VideoweiserProjects.Siemens.url}
-              // autoplay={true}
-              width={720}
-            />
+            <div>
+              <Video
+                url={VideoweiserProjects.Siemens.url}
+                isClickable={true}
+                // autoplay={true}
+                width={720}
+              />
+            </div>
           </Glow>
         </div>
         <div className="flex space-x-[16px]">
           <Video
             url={VideoweiserProjects.Coviant.url}
             height={240}
-            // autoplay={true}
+            isClickable={true}
             className="self-end"
           />
           <Video
             url={VideoweiserProjects.NextGenOffice.url}
             aspectRatio={3 / 2}
+            isClickable={true}
             // autoplay={true}
             height={360}
           />
           <Video
             url={VideoweiserProjects.NextGenAmbientAssist.url}
             height={200}
+            isClickable={true}
             // autoplay={true}
             className="self-start"
           />

@@ -1,8 +1,9 @@
-import React, { useMemo } from 'react';
+"use client";
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 
 interface VideoCardProps {
   url: string;
-  aspectRatio?: number; // e.g., 16/9, 4/3, 1/1
+  aspectRatio?: number; 
   width?: string | number;
   height?: string | number;
   autoplay?: boolean;
@@ -12,6 +13,7 @@ interface VideoCardProps {
   borderRadius?: number;
   className?: string;
   overlayOpacity?: number;
+  lazyLoad?: boolean;
 }
 
 export const VideoCard: React.FC<VideoCardProps> = ({
@@ -26,7 +28,39 @@ export const VideoCard: React.FC<VideoCardProps> = ({
   borderRadius = 24,
   className = '',
   overlayOpacity = 50,
+  lazyLoad = true,
 }) => {
+  const [isInView, setIsInView] = useState(!lazyLoad); // Load immediately if lazy loading is disabled
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Intersection Observer for lazy loading
+  useEffect(() => {
+    if (!lazyLoad) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsInView(true);
+            // Once loaded, we can stop observing
+            observer.disconnect();
+          }
+        });
+      },
+      {
+        rootMargin: '200px', // Start loading 200px before entering viewport
+        threshold: 0.01,
+      }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [lazyLoad]);
   // Parse video URL and generate embed URL
   const embedUrl = useMemo(() => {
     // YouTube
@@ -154,21 +188,21 @@ export const VideoCard: React.FC<VideoCardProps> = ({
             allowFullScreen
             title="Video"
           />
-          {!isClickable && (
-            <div
-              className='hover:opacity-[.9] transition-0.5s'
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                backgroundColor: `rgba(0, 0, 0, ${overlayOpacity / 100})`,
-                width: '100%',
-                height: '100%',
-                pointerEvents: 'auto',
-                cursor: 'default',
-              }}
-            />
-          )}
+
+          <div
+            className='hover:opacity-[.9] transition-0.5s'
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              backgroundColor: `rgba(0, 0, 0, ${overlayOpacity / 100})`,
+              width: '100%',
+              height: '100%',
+              pointerEvents: isClickable ? 'none' : 'auto',
+              cursor: 'default',
+            }}
+          />
+
         </div>
       ) : (
         // Fixed dimensions mode
@@ -184,21 +218,21 @@ export const VideoCard: React.FC<VideoCardProps> = ({
             allowFullScreen
             title="Video"
           />
-          {!isClickable && (
-            <div
-              className='hover:opacity-[.9] transition-0.5s'
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                backgroundColor: `rgba(0, 0, 0, ${overlayOpacity / 100})`,
-                width: '100%',
-                height: '100%',
-                pointerEvents: 'auto',
-                cursor: 'default',
-              }}
-            />
-          )}
+
+          <div
+            className='hover:opacity-[.9] transition-0.5s'
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              backgroundColor: `rgba(0, 0, 0, ${overlayOpacity / 100})`,
+              width: '100%',
+              height: '100%',
+              pointerEvents: isClickable ? 'none' : 'auto',
+              cursor: 'default',
+            }}
+          />
+
         </div>
       )}
     </div>
