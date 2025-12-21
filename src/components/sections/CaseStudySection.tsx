@@ -11,17 +11,18 @@ export function CaseStudySection() {
       withGrid
       gridBlocks={GridBlockLocations} >
       {/* Main Section Container */}
-      <div className="max-w-8xl py-[64px] mx-auto">
+      <div className="max-w-7xl mx-auto py-16 lg:py-24 px-2 lg:px-4">
 
-        <div className="max-w-[540px]">
-          <div className="max-w-[460px] space-y-[16px]">
+        <div className="max-w-[540px] mx-auto lg:mx-0 text-center lg:text-left mb-12">
+          <div className="space-y-[16px]">
             <BackgroundFade >
               <TextComponent.Label.Small className="text-accent font-bold"
                 text="Case studies" />
             </BackgroundFade>
             <BackgroundFade >
               <TextComponent.Headline.Medium
-                text="Hundreds of brands. Same strong impact" />
+                className="whitespace-pre-line"
+                text={"Hundreds of brands. \nSame strong impact"} />
             </BackgroundFade>
           </div>
           <BackgroundFade >
@@ -30,21 +31,21 @@ export function CaseStudySection() {
           </BackgroundFade>
         </div>
         <Glow className="w-full" glowIntensity="low" glowSize={70}>
-          <div className="w-full flex items-stretch space-x-[8px] pt-6" >
+          <div className="flex flex-col lg:flex-row items-stretch gap-2 lg:gap-2" >
             <CaseStudyHighlight
-              className="rounded-tl-[32px] rounded-bl-[32px] rounded-tr-[12px] rounded-br-[12px]"
+              className="rounded-3xl lg:rounded-tl-[32px] lg:rounded-bl-[32px] lg:rounded-tr-[12px] lg:rounded-br-[12px]"
               title="Safety and compliance-first video production"
               subtitle="Astronomical leaps in internal processes and safety compliance achieved through expert-crafted explainer videos."
               testimonial={ClientTestimonials.Three60Cookware} />
 
             <CaseStudyHighlight
-              className="rounded-[12px]"
+              className="rounded-3xl lg:rounded-[12px]"
               title="Precision-crafted, audience-centric explainer videos"
               subtitle="Complex topics simplified through videos reported greater customer education, higher engagement and more conversion."
               testimonial={ClientTestimonials.Petersons} />
 
             <CaseStudyHighlight
-              className="rounded-tl-[12px] rounded-bl-[12px] rounded-tr-[32px] rounded-br-[32px]"
+              className="rounded-3xl lg:rounded-tl-[12px] lg:rounded-bl-[12px] lg:rounded-tr-[32px] lg:rounded-br-[32px]"
               title="Confident, consistent and fast-moving branding visuals"
               subtitle="Brand messaging with zero ambiguity, resonates strongly with audiences, and communicated through compelling video narratives."
               testimonial={ClientTestimonials.MacSports} />
@@ -69,7 +70,7 @@ export const CaseStudyHighlight: React.FC<CaseStudyHighlightProps> = ({
   testimonial,
   className,
 }) => {
-  const baseClasses = "flex flex-col max-w-[450px] w-full min-h-[520px] justify-between bg-[var(--background)] px-[24px] pt-[32px] pb-[24px] border-border border-[1px]";
+  const baseClasses = " flex flex-col justify-between w-full max-w-[600px] mx-auto lg:max-w-none lg:mx-0 min-h-[520px] bg-[var(--background)] px-6 pt-8 pb-6 border border-border";
   return (
     <div className={`${baseClasses} ${className}`}>
       <div className="space-y-[16px]">

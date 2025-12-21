@@ -1,4 +1,3 @@
-// components/Section.tsx
 import React from 'react';
 import GridBackground from './GridBackground';
 import type { SectionProps } from '@/types/ComponentTypes';

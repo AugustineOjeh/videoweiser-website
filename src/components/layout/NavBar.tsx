@@ -35,7 +35,7 @@ export function Navbar() {
         ${scrolled ? "bg-[var(--background)]/80 border-b-[0.5px] backdrop-blur border-border/60" : "bg-transparent"}
       `}
       >
-        <div className="max-w-8xl mx-auto px-[80px] h-[72px] flex items-center justify-between">
+        <div className="max-w-8xl mx-auto px-[16px] md:px-[40px] lg:px-[80px] h-[72px] flex items-center justify-between">
 
           {/* Logo */}
           <div className="flex items-center">
@@ -55,6 +55,7 @@ export function Navbar() {
           <div
             className="flex items-center space-x-[40px]">
             <PrimaryButton
+              className="hidden md:flex"
               label="Contact us"
               href="#" />
             <button

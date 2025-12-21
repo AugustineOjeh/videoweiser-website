@@ -1,4 +1,3 @@
-// components/GridBackground.tsx
 import React from 'react';
 import type { GridBackgroundProps } from '@/types/ComponentTypes';
 
