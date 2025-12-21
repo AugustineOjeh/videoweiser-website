@@ -6,7 +6,9 @@ import { GridBlockLocations, VideoweiserProjects } from "@/core/constants";
 export function AboutUsSection() {
   return (
 
-    < Section withGrid gridBlocks={GridBlockLocations} >
+    < Section id="about"
+      withGrid
+      gridBlocks={GridBlockLocations} >
       {/* Main Section Container */}
       <div
         className="max-w-8xl items-center space-y-[16px] py-[88px] mx-auto"

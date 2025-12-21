@@ -368,24 +368,67 @@
     overflow: hidden;
   }
 
-  /* Hide scrollbar */
   .portfolio-hero-grid>div {
     scrollbar-width: none;
-    /* Firefox */
     -ms-overflow-style: none;
-    /* IE and Edge */
   }
 
   .portfolio-hero-grid>div::-webkit-scrollbar {
     display: none;
-    /* Chrome, Safari, Opera */
   }
 
-  /* Optional: Add subtle pause on hover */
   .portfolio-hero-grid:hover {
-    /* Animation pause is handled in JS, but you can add visual feedback */
     opacity: 0.95;
     transition: opacity 0.3s ease;
+  }
+
+  /* =========================
+     MOBILE MENU ANIMATIONS
+     ========================= */
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+    }
+
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  /* Ensure menu is above everything */
+  .mobile-menu-backdrop,
+  .mobile-menu-panel {
+    backdrop-filter: blur(8px);
+  }
+
+  /* Smooth scrolling for menu items */
+  .mobile-menu-panel nav {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+
+  .mobile-menu-panel nav::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .mobile-menu-panel nav::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .mobile-menu-panel nav::-webkit-scrollbar-thumb {
+    background-color: var(--border);
+    border-radius: 3px;
   }
 }
 

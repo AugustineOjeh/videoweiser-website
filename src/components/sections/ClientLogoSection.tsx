@@ -5,7 +5,10 @@ import { ClientLogos } from "@/core/constants/ClientLogos";
 export function ClientLogoSection() {
   return (
 
-    < Section withGrid={false} className="py-[96px]">
+    < Section
+      id="clients"
+      withGrid={false}
+      className="py-[96px]">
       {/* Main Section Container */}
       <Glow glowIntensity="low" glowSize={100}>
 

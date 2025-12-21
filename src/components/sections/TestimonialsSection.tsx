@@ -6,7 +6,10 @@ import { ClientTestimonials, GridBlockLocations } from "@/core/constants";
 export function TestimonialsSection() {
   return (
 
-    < Section withGrid gridBlocks={GridBlockLocations} >
+    < Section
+      id="testimonials"
+      withGrid
+      gridBlocks={GridBlockLocations} >
       {/* Main Section Container */}
       <div
         className="max-w-8xl flex flex-col items-center w-full justify-center space-y-[96px] py-[88px] mx-auto"

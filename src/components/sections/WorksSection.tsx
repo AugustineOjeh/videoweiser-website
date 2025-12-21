@@ -20,7 +20,9 @@ export function WorksSection() {
   ];
 
   return (
-    <Section className="relative">
+    <Section
+      id="works"
+      className="relative">
       {/* Text behind the videos */}
       <div
         className="absolute inset-0 flex items-center justify-center"

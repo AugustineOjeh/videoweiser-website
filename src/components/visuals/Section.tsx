@@ -5,28 +5,28 @@ import type { SectionProps } from '@/types/ComponentTypes';
 
 
 export const Section: React.FC<SectionProps> = ({
-    children,
-    className = '',
-    withGrid = true,
-    gridSize = 80,
-    gridBlocks = [],
-    id,
+  children,
+  className = '',
+  withGrid = true,
+  gridSize = 80,
+  gridBlocks = [],
+  id,
 }) => {
-    const content = (
-        <section id={id} className={`section ${className}`}>
-            {children}
-        </section>
+  const content = (
+    <section id={id} className={`section scroll-smooth ${className}`}>
+      {children}
+    </section>
+  );
+
+  if (withGrid) {
+    return (
+      <GridBackground gridSize={gridSize} gridBlocks={gridBlocks} >
+        {content}
+      </GridBackground>
     );
+  }
 
-    if (withGrid) {
-        return (
-            <GridBackground gridSize={gridSize} gridBlocks={gridBlocks} >
-                {content}
-            </GridBackground>
-        );
-    }
-
-    return content;
+  return content;
 };
 
 export default Section;

@@ -8,14 +8,20 @@ import { IoAddOutline, IoRemoveOutline } from "react-icons/io5";
 export function FAQSection() {
   return (
 
-    < Section withGrid={false} className="py-[96px]">
+    < Section
+      id="faq"
+      withGrid={false}
+      className="py-[96px]">
       {/* Main Section Container */}
-      <Glow glowIntensity="low" glowSize={100}>
+      <Glow
+        glowIntensity="low"
+        glowSize={100}>
 
-        <div className="max-w-6xl mx-auto flex bg-[var(--background)] border-border border-[1px] rounded-[32px] px-[48px] py-[48px]">
+        <div
+          className="max-w-6xl mx-auto flex bg-[var(--background)] border-border border-[1px] rounded-[32px] px-[48px] py-[48px]">
           {/* This container holds the Texts (on the left —or top for mobile + tablets) 
                 and the video cards on the right (or below for mobile + tablets) */}
-          <div className="flex w-full gap-[140px] items-start justify-between">
+          <div className="flex w-full gap-[130px] items-start justify-between">
             <div className="max-w-[320px]">
               <TextComponent.Headline.Medium
                 text="Frequently asked questions" />
@@ -50,10 +56,10 @@ export function QuestionBox() {
 
           <div
             key={i}
-            className={`py-[24px] w-full border-border ${(i < (FrequentlyAskedQuestions.length - 1)) ? 'border-b-[1px]' : 'border-none'}`}
+            className={`w-full border-border ${(i < (FrequentlyAskedQuestions.length - 1)) ? 'border-b-[1px]' : 'border-none'}`}
           >
             <button
-              className="w-full flex justify-between items-center text-left"
+              className="w-full py-[24px] flex justify-between items-center space-x-[24px] text-left"
               onClick={() => setOpenIndex(isOpen ? null : i)}
             >
               <span>
@@ -65,7 +71,7 @@ export function QuestionBox() {
               <span>{isOpen ? <IoRemoveOutline size={24} /> : <IoAddOutline size={24} />}</span>
             </button>
             {isOpen && (
-              <div className="mt-[24px]">
+              <div className="mb-[24px]">
                 <TextComponent.Body.Small
                   text={item.answer}
                 />

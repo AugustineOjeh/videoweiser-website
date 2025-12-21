@@ -5,7 +5,10 @@ import { GridBlockLocations, VideoweiserProjects } from "@/core/constants";
 export function HeroSection() {
   return (
 
-    < Section withGrid gridBlocks={GridBlockLocations} >
+    < Section
+      id="hero"
+      withGrid
+      gridBlocks={GridBlockLocations} >
       {/* Main Section Container */}
       <div className="max-w-8xl mx-auto">
         {/* This container holds the Texts (on the left —or top for mobile + tablets) 
