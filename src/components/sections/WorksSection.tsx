@@ -1,6 +1,52 @@
+// import { TextComponent, PortfolioHeroGrid } from "../ui";
+// import { Section } from "../visuals";
+
+
+// export function WorksSection() {
+//   // Replace with response from Vimeo API
+//   const showcaseVideos = [
+//     { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 9 / 16 },
+//     { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 9 / 16 },
+//     { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 16 / 9 },
+//     { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 16 / 9 },
+//     { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 2 / 3 },
+//     { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 3 / 2 },
+//     { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 1 / 1 },
+//     { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 9 / 16 },
+//     { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 16 / 9 },
+//     { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 4 / 3 },
+//     { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 1 / 1 },
+//     { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 2 / 3 },
+//   ];
+
+//   return (
+//     <Section
+//       id="works"
+//       className="relative">
+//       {/* Text behind the videos */}
+//       <div
+//         className="absolute inset-0 flex items-center justify-center"
+//         style={{ zIndex: 0 }}
+//       >
+//         <div
+//           className="text-center max-w-3xl px-8">
+//           <TextComponent.Title
+//             className="opacity-20 text-[128px]"
+//             text="Our Works" />
+//         </div>
+//       </div>
+//       <PortfolioHeroGrid
+//         videos={showcaseVideos}
+//         rowHeight={400}
+//         scrollSpeed={30}
+//         gap={16}
+//       />
+//     </Section>
+//   );
+// }
+
 import { TextComponent, PortfolioHeroGrid } from "../ui";
 import { Section } from "../visuals";
-
 
 export function WorksSection() {
   // Replace with response from Vimeo API
@@ -22,25 +68,31 @@ export function WorksSection() {
   return (
     <Section
       id="works"
-      className="relative">
+      className="relative"
+    >
       {/* Text behind the videos */}
       <div
-        className="absolute inset-0 flex items-center justify-center"
+        className="absolute inset-0 flex items-center justify-center pointer-events-none"
         style={{ zIndex: 0 }}
       >
-        <div
-          className="text-center max-w-3xl px-8">
+        <div className="text-center max-w-3xl px-1">
           <TextComponent.Title
-            className="opacity-20 text-[128px]"
-            text="Our Works" />
+            // Adjusted size for mobile responsiveness
+            className="opacity-20 text-[60px] md:text-[128px]"
+            text="Our Works"
+          />
         </div>
       </div>
-      <PortfolioHeroGrid
-        videos={showcaseVideos}
-        rowHeight={400}
-        scrollSpeed={30}
-        gap={16}
-      />
+
+      {/* Grid Component */}
+      <div className="relative z-10">
+        <PortfolioHeroGrid
+          videos={showcaseVideos}
+          rowHeight={400}
+          scrollSpeed={30}
+          gap={16}
+        />
+      </div>
     </Section>
   );
 }
