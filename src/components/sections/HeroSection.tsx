@@ -11,11 +11,11 @@ export function HeroSection() {
       gridBlocks={GridBlockLocations} >
       {/* Main Section Container */}
       <div
-        className="max-w-8xl mx-auto">
+        className="max-w-7xl flex items-center justify-center mx-auto">
         <div
           className="flex flex-col lg:flex-row gap-[48px] lg:gap-[88px] items-center">
           <div
-            className="max-w-[640px] text-center lg:text-left">
+            className="max-w-[600px] text-center lg:text-left">
             <BackgroundFade >
               <TextComponent.Title
                 text="Videos to enrich healthcare brands and drive growth" />
@@ -73,22 +73,6 @@ export function HeroSection() {
                   aspectRatio={VideoweiserProjects.MadFit.aspectRatio
                   } />
               </Glow>
-            </div>
-            <div className="space-y-[24px] lg:space-y-[8px] lg:mt-32">
-              <Video
-                url={VideoweiserProjects.MadFit.url}
-                autoplay={false}
-                showControls={false}
-                height={360}
-                aspectRatio={VideoweiserProjects.MadFit.aspectRatio
-                } />
-              <Video
-                url={VideoweiserProjects.MadFit.url}
-                autoplay={false}
-                showControls={false}
-                height={360}
-                aspectRatio={VideoweiserProjects.MadFit.aspectRatio
-                } />
             </div>
 
           </div>

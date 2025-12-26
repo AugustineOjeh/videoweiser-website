@@ -12,7 +12,7 @@ export function TestimonialsSection() {
       gridBlocks={GridBlockLocations} >
       {/* Main Section Container */}
       <div
-        className="max-w-8xl mx-auto py-16 lg:py-24 px-6 lg:px-8"
+        className="max-w-7xl mx-auto py-16 lg:py-24 px-6 lg:px-8"
       >
         <div className="max-w-[664px] mx-auto text-center space-y-4 mb-16 lg:mb-24">
           <BackgroundFade>

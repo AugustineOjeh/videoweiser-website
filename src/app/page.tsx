@@ -10,7 +10,7 @@ import {
 
 export default function Home() {
   return (
-    <main>
+    <main className="max-w-8xl">
       <HeroSection />
       <ClientLogoSection />
       <CaseStudySection />

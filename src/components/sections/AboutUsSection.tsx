@@ -11,7 +11,7 @@ export function AboutUsSection() {
       gridBlocks={GridBlockLocations} >
       {/* Main Section Container */}
       <div
-        className="max-w-8xl mx-auto py-16 lg:py-24 px-4 lg:px-4"
+        className="max-w-7xl mx-auto py-16 lg:py-24 px-4 lg:px-4"
       >
         <div
           className="flex flex-col lg:flex-row justify-between items-center lg:items-end gap-12 lg:gap-20 mb-4"
@@ -53,7 +53,7 @@ export function AboutUsSection() {
             <Video
               url={VideoweiserProjects.Siemens.url}
               isClickable={true}
-              width={720}
+              width={700}
               aspectRatio={16 / 9}
             />
           </Glow>
