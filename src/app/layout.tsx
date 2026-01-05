@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { ThemeProvider } from "next-themes";
 import { gilroy, aeonik } from "@/lib/fonts";
 import "../styles/globals.css";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/NavBar";
+import { ThemeProvider } from "@/core/contexts/ThemeContext";
 
 export const metadata: Metadata = {
   title: { default: "Videoweiser | Video Production Partners for Healthcare Brands", template: "%s | Videoweiser" },
@@ -20,14 +20,11 @@ export default function RootLayout({
       <body
         className={`${gilroy.variable} ${aeonik.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-        ></ThemeProvider>
-        <Navbar />
-        {children}
-        <Footer />
+        <ThemeProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

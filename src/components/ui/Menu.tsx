@@ -1,9 +1,9 @@
 "use client";
-
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { IoCloseSharp } from 'react-icons/io5';
 import Link from 'next/link';
 import { TextComponent } from '.';
+import ThemeToggle from '../visuals/ThemeToggle';
 
 interface MenuItem {
   label: string;
@@ -21,6 +21,17 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
   onClose,
   menuItems,
 }) => {
+  const [isAnimatingOut, setIsAnimatingOut] = useState(false);
+
+  const handleClose = () => {
+    setIsAnimatingOut(true);
+    // Wait for animation to complete before actually closing
+    setTimeout(() => {
+      setIsAnimatingOut(false);
+      onClose();
+    }, 300); // Match animation duration
+  };
+
   // Prevent body scroll when menu is open
   useEffect(() => {
     if (isOpen) {
@@ -38,22 +49,22 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && isOpen) {
-        onClose();
+        handleClose();
       }
     };
 
     document.addEventListener('keydown', handleEscape);
     return () => document.removeEventListener('keydown', handleEscape);
-  }, [isOpen, onClose]);
+  }, [isOpen]);
 
-  if (!isOpen) return null;
+  if (!isOpen && !isAnimatingOut) return null;
 
   return (
     <>
       {/* Backdrop overlay */}
       <div
         className="mobile-menu-backdrop"
-        onClick={onClose}
+        onClick={handleClose}
         style={{
           position: 'fixed',
           top: 0,
@@ -62,7 +73,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
           bottom: 0,
           backgroundColor: 'rgba(0, 0, 0, 0.5)',
           zIndex: 998,
-          animation: 'fadeIn 0.3s ease-out',
+          animation: isAnimatingOut ? 'fadeOut 0.3s ease-out forwards' : 'fadeIn 0.3s ease-out',
         }}
       />
 
@@ -79,7 +90,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
           backgroundColor: 'var(--background)',
           zIndex: 999,
           boxShadow: '-4px 0 24px rgba(0, 0, 0, 0.2)',
-          animation: 'slideInRight 0.3s ease-out',
+          animation: isAnimatingOut ? 'slideOutRight 0.3s ease-out forwards' : 'slideInRight 0.3s ease-out',
           display: 'flex',
           flexDirection: 'column',
         }}
@@ -95,7 +106,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
           }}
         >
           <button
-            onClick={onClose}
+            onClick={handleClose}
             style={{
               background: 'none',
               border: 'none',
@@ -119,7 +130,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
         </div>
 
         {/* Menu items */}
-        <nav
+        <nav className='flex flex-col justify-between h-full'
           style={{
             flex: 1,
             overflowY: 'auto',
@@ -155,6 +166,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
               </li>
             ))}
           </ul>
+          <ThemeToggle />
         </nav>
       </div>
     </>

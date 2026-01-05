@@ -17,24 +17,21 @@
   --grid-block-50: #8075ff80;
 }
 
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1a1631;
-    --foreground: #fff;
-    --text: #fff;
-    --primary: #8075ff;
-    --primary-hover: #6320ee;
-    --accent: #e695ff;
-    --link: #f8f0fb;
-    --bg-glow: #8075ff;
-    --grid: #fff;
-    --border: #8075ff80;
-    --grid-block-15: #8075ff26;
-    --grid-block-20: #8075ff33;
-    --grid-block-25: #8075ff40;
-    --grid-block-50: #8075ff80;
-  }
+.dark {
+  --background: #1a1631;
+  --foreground: #fff;
+  --text: #fff;
+  --primary: #8075ff;
+  --primary-hover: #6320ee;
+  --accent: #e695ff;
+  --link: #f8f0fb;
+  --bg-glow: #8075ff;
+  --grid: #fff;
+  --border: #8075ff80;
+  --grid-block-15: #8075ff26;
+  --grid-block-20: #8075ff33;
+  --grid-block-25: #8075ff40;
+  --grid-block-50: #8075ff80;
 }
 
 /* Responsive adjustments */
@@ -409,6 +406,16 @@
     }
   }
 
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+
   @keyframes slideInRight {
     from {
       transform: translateX(100%);
@@ -416,6 +423,16 @@
 
     to {
       transform: translateX(0);
+    }
+  }
+
+  @keyframes slideOutRight {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(100%);
     }
   }
 
