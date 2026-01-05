@@ -1,12 +1,14 @@
+"use client";
 import { TestimonialData } from "@/types/ComponentTypes";
 import { CustomImage, TestimonialPersonalDataCard, Text, TextButton, TextComponent, Video } from "../ui";
 import { Glow, BackgroundFade, Section } from "../visuals";
 import { ClientTestimonials, GridBlockLocations } from "@/core/constants";
-import { ClientLogos } from "@/core/constants/ClientLogos";
+import { useTheme } from "@/core/contexts/ThemeContext";
 
 export function CaseStudySection() {
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === 'dark';
   return (
-
     < Section id="case-studies"
       withGrid
       gridBlocks={GridBlockLocations} >
@@ -33,18 +35,21 @@ export function CaseStudySection() {
         <Glow className="w-full" glowIntensity="low" glowSize={70}>
           <div className="flex flex-col lg:flex-row items-stretch gap-2 lg:gap-2" >
             <CaseStudyHighlight
+              isDark={isDark}
               className="rounded-3xl lg:rounded-tl-[32px] lg:rounded-bl-[32px] lg:rounded-tr-[12px] lg:rounded-br-[12px]"
               title="Safety and compliance-first video production"
               subtitle="Astronomical leaps in internal processes and safety compliance achieved through expert-crafted explainer videos."
               testimonial={ClientTestimonials.Three60Cookware} />
 
             <CaseStudyHighlight
+              isDark={isDark}
               className="rounded-3xl lg:rounded-[12px]"
               title="Precision-crafted, audience-centric explainer videos"
               subtitle="Complex topics simplified through videos reported greater customer education, higher engagement and more conversion."
               testimonial={ClientTestimonials.Petersons} />
 
             <CaseStudyHighlight
+              isDark={isDark}
               className="rounded-3xl lg:rounded-tl-[12px] lg:rounded-bl-[12px] lg:rounded-tr-[32px] lg:rounded-br-[32px]"
               title="Confident, consistent and fast-moving branding visuals"
               subtitle="Brand messaging with zero ambiguity, resonates strongly with audiences, and communicated through compelling video narratives."
@@ -61,6 +66,7 @@ interface CaseStudyHighlightProps {
   title: string;
   subtitle: string;
   testimonial: TestimonialData;
+  isDark: boolean;
   className?: string;
 }
 
@@ -68,6 +74,7 @@ export const CaseStudyHighlight: React.FC<CaseStudyHighlightProps> = ({
   title,
   subtitle,
   testimonial,
+  isDark,
   className,
 }) => {
   const baseClasses = " flex flex-col justify-between w-full max-w-[600px] mx-auto lg:max-w-none lg:mx-0 min-h-[520px] bg-[var(--background)] px-6 pt-8 pb-6 border border-border";
@@ -81,7 +88,7 @@ export const CaseStudyHighlight: React.FC<CaseStudyHighlightProps> = ({
       <div className="px-[16px] py-[24px] border-border border-[1px] rounded-[16px] space-y-[32px]">
         <CustomImage
           alt={testimonial.company?.alt}
-          className={`${testimonial.company?.name === "Peterson's" ? 'dark:grayscale dark:invert' : ''}`}
+          className={`${testimonial.company?.name === "Peterson's" && isDark ? 'grayscale invert' : ''} : ''}`}
           lightModeImage={testimonial.company?.light}
           darkModeImage={testimonial.company?.dark}
           height={48}

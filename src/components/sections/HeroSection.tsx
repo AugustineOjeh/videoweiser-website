@@ -1,6 +1,6 @@
 import { PrimaryButton, TextButton, TextComponent, Video } from "../ui";
 import { Glow, BackgroundFade, Section } from "../visuals";
-import { GridBlockLocations, VideoweiserProjects } from "@/core/constants";
+import { GridBlockLocations } from "@/core/constants";
 
 export function HeroSection() {
   return (
@@ -11,7 +11,7 @@ export function HeroSection() {
       gridBlocks={GridBlockLocations} >
       {/* Main Section Container */}
       <div
-        className="max-w-7xl min-h-[70vh] flex flex-col items-center lg:items-start justify-center mx-auto pb-12">
+        className="max-w-7xl min-h-[70vh] flex flex-col items-center lg:items-start justify-center mx-auto lg:pb-12">
         <div
           className="flex flex-col w-full gap-[48px] lg:gap-[32px] items-center lg:items-start justify-center">
           <div className="hidden sm:flex w-full" >
@@ -20,6 +20,7 @@ export function HeroSection() {
                 className="w-full max-w-[1200px]"
                 url="https://vimeo.com/1151422144"
                 autoplay={true}
+                overlayOpacity={10}
                 showControls={false}
                 aspectRatio={16 / 9} />
             </Glow>

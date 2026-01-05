@@ -69,7 +69,7 @@ export function ClientLogoSection() {
             <div className="w-full flex-1">
               <div className="grid grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-12 items-center justify-center max-w-2xl mx-auto">
                 {allLogos.map((logo, index) => (
-                  <div className="mx-auto">
+                  <div key={`${logo.alt}-${index}`} className="mx-auto">
                     <CustomImage
                       key={`${logo.alt}-${index}`}
                       lightModeImage={logo.light}
