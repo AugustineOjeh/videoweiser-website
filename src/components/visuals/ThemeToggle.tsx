@@ -6,7 +6,7 @@ export default function ThemeToggle() {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div className="w-full flex justify-between items-center mx-auto mb-4 px-2 py-2 rounded-full bg-[var(--grid-block-15)]/50">
+    <div className="w-full flex justify-between items-center mx-auto my-2 px-2 py-2 rounded-full bg-[var(--grid-block-15)]/50">
       <button
         className={`p-4 w-full items-center justify-center flex rounded-full hover:text-[var(--accent)] ${theme === 'light' ? 'bg-[var(--grid-block-15)]' : ''}`}
         onClick={() => setTheme('light')}>

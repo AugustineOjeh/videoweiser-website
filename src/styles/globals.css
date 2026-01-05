@@ -365,7 +365,6 @@
 
   .video-card:hover {
     border-color: var(--primary);
-    /* box-shadow: 0 8px 24px var(--grid-block-25); */
   }
 
   /* =========================

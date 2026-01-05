@@ -11,70 +11,73 @@ export function HeroSection() {
       gridBlocks={GridBlockLocations} >
       {/* Main Section Container */}
       <div
-        className="max-w-7xl flex items-center justify-center mx-auto">
+        className="max-w-7xl min-h-[70vh] flex flex-col items-center lg:items-start justify-center mx-auto pb-12">
         <div
-          className="flex flex-col lg:flex-row gap-[48px] lg:gap-[88px] items-center">
-          <div
-            className="max-w-[600px] text-center lg:text-left">
-            <BackgroundFade >
-              <TextComponent.Title
-                text="Videos to enrich healthcare brands and drive growth" />
-            </BackgroundFade>
-            <BackgroundFade >
-              <TextComponent.Body.Large className="my-8 lg:my-12"
-                text="We create engaging videos that simplify complex health concepts,
-                        enhance credibility, and inspire actions that leads to measurable
-                        growth for brands." />
-            </BackgroundFade>
+          className="flex flex-col w-full gap-[48px] lg:gap-[32px] items-center lg:items-start justify-center">
+          <div className="hidden sm:flex w-full" >
+            <Glow glowIntensity="low" glowSize={100} className="w-full" >
+              <Video
+                className="w-full max-w-[1200px]"
+                url="https://vimeo.com/1151422144"
+                autoplay={true}
+                showControls={false}
+                aspectRatio={16 / 9} />
+            </Glow>
 
-            <div
-              className="flex flex-col sm:flex-row gap-4 sm:justify-center lg:justify-start">
+          </div>
+          <div
+            className="w-full max-w-[640px] lg:max-w-none text-center lg:text-left">
+            <div className="flex flex-col lg:grid lg:grid-cols-[3fr_2fr] lg:gap-6 w-full">
+              {/* Title + Buttons */}
+              <div>
+                <BackgroundFade>
+                  <TextComponent.Headline.Large
+                    className="hidden lg:block"
+                    text="Videos to enrich healthcare brands and drive growth"
+                  />
+                  <TextComponent.Title
+                    className="block lg:hidden"
+                    text="Videos to enrich healthcare brands and drive growth"
+                  />
+                </BackgroundFade>
+              </div>
+
+              {/* Subtitle */}
+              <div className="lg:max-w-[640px] lg:ml-auto">
+                <BackgroundFade>
+                  <TextComponent.Body.Medium
+                    className="my-8 lg:mt-2"
+                    text="We create engaging videos that simplify complex health concepts,
+            enhance credibility, and inspire actions that leads to measurable
+            growth for brands."
+                  />
+                </BackgroundFade>
+                {/* Buttons stay BELOW subtitle on mobile/tablet */}
+                <div className="hidden lg:flex mt-6 gap-4">
+                  <PrimaryButton
+                    label="Contact us"
+                    href="#"
+                  />
+                  <TextButton
+                    label="See our works"
+                    href="/works"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile + Tablet buttons (original position) */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:hidden">
               <PrimaryButton
                 className="w-full sm:w-auto"
                 label="Contact us"
-                href="#" />
+                href="#"
+              />
               <TextButton
                 label="See our works"
-                href="/works" />
+                href="/works"
+              />
             </div>
-          </div>
-          <div className="hidden sm:flex w-full lg:w-[900px] space-x-[24px] lg:space-x-[8px] justify-center" >
-            <div className="space-y-[24px] lg:space-y-[8px] lg:mt-16">
-              <Video
-                url={VideoweiserProjects.MadFit.url}
-                autoplay={false}
-                showControls={false}
-                height={360}
-                aspectRatio={VideoweiserProjects.MadFit.aspectRatio
-                } />
-              <Video
-                url={VideoweiserProjects.MadFit.url}
-                autoplay={false}
-                showControls={false}
-                height={360}
-                aspectRatio={VideoweiserProjects.MadFit.aspectRatio
-                } />
-            </div>
-            <div className="space-y-[24px] lg:space-y-[8px]">
-              <Video
-                url={VideoweiserProjects.MadFit.url}
-                autoplay={false}
-                showControls={false}
-                height={360}
-                aspectRatio={VideoweiserProjects.MadFit.aspectRatio
-                } />
-              {/* Apply the Glow Effect to this card */}
-              <Glow glowIntensity="low" glowSize={150} >
-                <Video
-                  url={VideoweiserProjects.MadFit.url}
-                  autoplay={false}
-                  showControls={false}
-                  height={360}
-                  aspectRatio={VideoweiserProjects.MadFit.aspectRatio
-                  } />
-              </Glow>
-            </div>
-
           </div>
         </div>
       </div>

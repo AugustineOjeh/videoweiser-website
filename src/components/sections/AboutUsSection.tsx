@@ -51,7 +51,7 @@ export function AboutUsSection() {
             glowIntensity="low"
             glowSize={100}>
             <Video
-              url={VideoweiserProjects.Siemens.url}
+              url="https://vimeo.com/1151422144/10ed00cf62"
               isClickable={true}
               width={700}
               aspectRatio={16 / 9}

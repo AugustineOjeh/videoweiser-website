@@ -165,8 +165,9 @@ export const VideoCard: React.FC<VideoCardProps> = ({
     <div
       className={`video-card ${className}`}
       style={{
-        width: dimensions.width,
+        width: '100%',
         height: dimensions.height,
+        maxWidth: '100%',
         borderRadius: `${borderRadius}px`,
         position: 'relative',
         overflow: 'hidden',
