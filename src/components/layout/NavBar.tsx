@@ -5,6 +5,7 @@ import { IoMenuSharp } from "react-icons/io5";
 import { CustomImage, PrimaryButton } from "../ui";
 import Link from "next/link";
 import MobileMenu from "../ui/Menu";
+import ContactUsButton from "../ui/ContactButton";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -15,7 +16,6 @@ export function Navbar() {
     { label: 'About', href: '/#about' },
     { label: 'Our works', href: '/works' },
     { label: 'Case studies', href: '/#case-studies' },
-    { label: 'Contact us', href: '#' },
   ];
 
   useEffect(() => {
@@ -54,10 +54,7 @@ export function Navbar() {
           {/* Right actions */}
           <div
             className="flex items-center space-x-[40px]">
-            <PrimaryButton
-              className="hidden md:flex"
-              label="Contact us"
-              href="#" />
+            <ContactUsButton />
             <button
               onClick={() => setIsMenuOpen(true)}
               aria-label="Open menu"

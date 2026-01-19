@@ -1,4 +1,5 @@
 import { CustomImage, PrimaryButton, TextButton, TextComponent } from "../ui";
+import ContactUsButton from "../ui/ContactButton";
 import { Glow, Section } from "../visuals";
 import { ClientLogos } from "@/core/constants/ClientLogos";
 
@@ -54,11 +55,7 @@ export function ClientLogoSection() {
 
               <div
                 className="flex flex-col md:flex-row gap-4 mt-6 items-stretch md:items-center justify-center lg:justify-start">
-                <PrimaryButton
-                  className="w-full md:w-auto"
-                  label="Contact us"
-                  href="#"
-                />
+                <ContactUsButton className="w-full md:w-auto" />
                 <TextButton
                   label="See our works"
                   href="/works"

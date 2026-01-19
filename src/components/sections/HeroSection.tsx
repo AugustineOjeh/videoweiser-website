@@ -1,4 +1,5 @@
 import { PrimaryButton, TextButton, TextComponent, Video } from "../ui";
+import ContactUsButton from "../ui/ContactButton";
 import { Glow, BackgroundFade, Section } from "../visuals";
 import { GridBlockLocations } from "@/core/constants";
 
@@ -55,10 +56,7 @@ export function HeroSection() {
                 </BackgroundFade>
                 {/* Buttons stay BELOW subtitle on mobile/tablet */}
                 <div className="hidden lg:flex mt-6 gap-4">
-                  <PrimaryButton
-                    label="Contact us"
-                    href="#"
-                  />
+                  <ContactUsButton />
                   <TextButton
                     label="See our works"
                     href="/works"
@@ -69,11 +67,7 @@ export function HeroSection() {
 
             {/* Mobile + Tablet buttons (original position) */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:hidden">
-              <PrimaryButton
-                className="w-full sm:w-auto"
-                label="Contact us"
-                href="#"
-              />
+              <ContactUsButton className="w-full sm:w-auto" />
               <TextButton
                 label="See our works"
                 href="/works"

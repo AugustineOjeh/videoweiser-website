@@ -4,6 +4,7 @@ import { PrimaryButton, TextButton, TextComponent } from "../ui";
 import { Glow, Section } from "../visuals";
 import { FrequentlyAskedQuestions } from "@/core/constants/FAQs";
 import { IoAddOutline, IoRemoveOutline } from "react-icons/io5";
+import ContactUsButton from "../ui/ContactButton";
 
 export function FAQSection() {
   return (
@@ -30,11 +31,7 @@ export function FAQSection() {
               className="flex flex-col sm:flex-row gap-4 mt-4 justify-center lg:justify-start w-full">
               <div
                 className="w-full sm:w-auto">
-                <PrimaryButton
-                  label="Contact us"
-                  href="#"
-                  className="w-full sm:w-auto"
-                />
+                <ContactUsButton className="w-full sm:w-auto" />
               </div>
               <div
                 className="w-full sm:w-auto">
