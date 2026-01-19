@@ -1,97 +1,27 @@
-// import { TextComponent, PortfolioHeroGrid } from "../ui";
-// import { Section } from "../visuals";
-
-
-// export function WorksSection() {
-//   // Replace with response from Vimeo API
-//   const showcaseVideos = [
-//     { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 9 / 16 },
-//     { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 9 / 16 },
-//     { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 16 / 9 },
-//     { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 16 / 9 },
-//     { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 2 / 3 },
-//     { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 3 / 2 },
-//     { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 1 / 1 },
-//     { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 9 / 16 },
-//     { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 16 / 9 },
-//     { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 4 / 3 },
-//     { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 1 / 1 },
-//     { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 2 / 3 },
-//   ];
-
-//   return (
-//     <Section
-//       id="works"
-//       className="relative">
-//       {/* Text behind the videos */}
-//       <div
-//         className="absolute inset-0 flex items-center justify-center"
-//         style={{ zIndex: 0 }}
-//       >
-//         <div
-//           className="text-center max-w-3xl px-8">
-//           <TextComponent.Title
-//             className="opacity-20 text-[128px]"
-//             text="Our Works" />
-//         </div>
-//       </div>
-//       <PortfolioHeroGrid
-//         videos={showcaseVideos}
-//         rowHeight={400}
-//         scrollSpeed={30}
-//         gap={16}
-//       />
-//     </Section>
-//   );
-// }
-
+import { fetchVimeoVideos } from "@/lib/FetchVimeoVideos";
 import { TextComponent, PortfolioHeroGrid } from "../ui";
 import { Section } from "../visuals";
 
-export function WorksSection() {
-  // Replace with response from Vimeo API
-  const showcaseVideos = [
-    { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 9 / 16 },
-    { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 9 / 16 },
-    { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 16 / 9 },
-    { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 16 / 9 },
-    { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 2 / 3 },
-    { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 3 / 2 },
-    { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 1 / 1 },
-    { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 9 / 16 },
-    { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 16 / 9 },
-    { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 4 / 3 },
-    { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 1 / 1 },
-    { url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', aspectRatio: 2 / 3 },
-  ];
+export async function WorksSection() {
+  const videos = await fetchVimeoVideos();
 
   return (
-    <Section
-      id="works"
-      className="relative"
-    >
-      {/* Text behind the videos */}
-      <div
-        className="absolute inset-0 flex items-center justify-center pointer-events-none"
-        style={{ zIndex: 0 }}
-      >
-        <div className="text-center max-w-3xl px-1">
-          <TextComponent.Title
-            // Adjusted size for mobile responsiveness
-            className="opacity-20 text-[60px] md:text-[128px]"
-            text="Our Works"
+    <Section id="works">
+      <div className="w-full flex flex-col md:flex-row md:justify-between md:items-end mb-4 max-w-7xl mx-auto">
+        <div className="lg:w-3/5 lg:mb-0 w-full md:max-w-[340px] lg:max-w-[560px]">
+          <TextComponent.Headline.Large
+            text="All Our Works, Showcased in One Place"
+          />
+        </div>
+        {/* Right: Subtitle */}
+        <div className="lg:w-2/5 w-full md:max-w-[320px] text-left lg:text-right py-4">
+          <TextComponent.Body.Medium
+            text="Browse through our portfolio of videos designed to elevate brands and engage audiences."
           />
         </div>
       </div>
-
-      {/* Grid Component */}
-      <div className="relative z-10">
-        <PortfolioHeroGrid
-          videos={showcaseVideos}
-          rowHeight={400}
-          scrollSpeed={30}
-          gap={16}
-        />
+      <div className="max-w-7xl mx-auto">
+        <PortfolioHeroGrid videos={videos} />
       </div>
     </Section>
   );

@@ -33,7 +33,7 @@ export function HeroSection() {
               <div>
                 <BackgroundFade>
                   <TextComponent.Headline.Large
-                    className="hidden lg:block"
+                    className="hidden lg:block font-bold"
                     text="Videos to enrich healthcare brands and drive growth"
                   />
                   <TextComponent.Title

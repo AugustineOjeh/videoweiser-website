@@ -19,6 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${gilroy.variable} ${aeonik.variable} antialiased`}
+        suppressHydrationWarning
       >
         <ThemeProvider>
           <Navbar />

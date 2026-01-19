@@ -12,7 +12,7 @@ export function TestimonialsSection() {
       gridBlocks={GridBlockLocations} >
       {/* Main Section Container */}
       <div
-        className="max-w-7xl mx-auto py-16 lg:py-24 px-6 lg:px-8"
+        className="max-w-7xl mx-auto items-center justify-center py-16 lg:py-24 px-6 lg:px-8"
       >
         <div className="max-w-[664px] mx-auto text-center space-y-4 mb-16 lg:mb-24">
           <BackgroundFade>
@@ -29,19 +29,18 @@ export function TestimonialsSection() {
         </div>
         <div className="flex flex-col gap-3 items-center lg:items-stretch">
 
-          <div className="w-full flex flex-col lg:flex-row gap-3 lg:h-[280px] items-center lg:items-stretch">
+          <div className="w-full flex flex-col lg:flex-row gap-3 items-stretch">
             <TestimonialCard
               className="w-full lg:w-auto"
               data={ClientTestimonials.MacSports}
             />
             <Glow
-              className="w-full lg:w-auto lg:h-[280px] flex items-center justify-center"
+              className="w-full lg:flex-1 flex items-center justify-center"
               glowIntensity="low"
               glowSize={100}>
               <TestimonialCard
-                className="w-full lg:min-w-[500px] lg:text-[24px] h-full"
+                className="w-full lg:w-auto"
                 data={ClientTestimonials.CentralReach}
-                showLogo={true}
               />
             </Glow>
             <TestimonialCard
@@ -49,7 +48,7 @@ export function TestimonialsSection() {
               data={ClientTestimonials.Petersons}
             />
           </div>
-          <div className="w-full flex flex-col lg:flex-row gap-3 lg:min-h-[200px] items-center lg:items-stretch">
+          <div className="w-full flex flex-col lg:flex-row gap-3 lg:min-h-[200px] items-center justify-center lg:items-stretch">
             <TestimonialCard
               className="w-full lg:w-auto"
               data={ClientTestimonials.MacSports}
@@ -82,7 +81,7 @@ export const TestimonialCard: React.FC<TestimonialProps> = ({
     <div
       className={`
         flex flex-col justify-between
-        w-full max-w-[440px] lg:max-w-none
+        w-full max-w-[440px] lg:flex-1
         min-h-[120px]
         bg-[var(--background)] 
         border border-border 
@@ -91,7 +90,7 @@ export const TestimonialCard: React.FC<TestimonialProps> = ({
       `}
     >
       <TextComponent.Headline.XSmall
-        className={`p-[24px] ${data.company?.name === "Central Reach" ? 'font-semibold text-[22px]' : 'font-medium text-[18px]'}`}
+        className={`p-[24px]`}
         text={`"${data.testimonial}"`}
       />
       <div
